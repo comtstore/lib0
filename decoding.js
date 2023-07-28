@@ -361,7 +361,7 @@ export const _readVarStringPolyfill = decoder => {
         remainingLen -= nextLen
       }
     }
-    return decodeURIComponent(escape(encodedString))
+    return unescape(escape(encodedString))
   }
 }
 /* c8 ignore stop */

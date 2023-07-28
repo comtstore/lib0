@@ -326,7 +326,7 @@ export const _writeVarStringNative = (encoder, str) => {
  * @param {String} str The string that is to be encoded.
  */
 export const _writeVarStringPolyfill = (encoder, str) => {
-  const encodedString = unescape(encodeURIComponent(str))
+  const encodedString = unescape(escape(str))
   const len = encodedString.length
   writeVarUint(encoder, len)
   for (let i = 0; i < len; i++) {
